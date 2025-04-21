@@ -19,7 +19,7 @@ class TerminalProvider with ChangeNotifier {
       "TransactionType": 4001,
     },
     "Header": {
-      "ApplicationId": "8af7a3c2d6a34cc582cb3e42bc07b00a",
+      "ApplicationId": "78d73040662d412d9dfdc5b9ce532d19",
       "MethodId": "1001",
       "UserId": "user1234",
       "VersionNo": "1.0",
@@ -27,7 +27,7 @@ class TerminalProvider with ChangeNotifier {
   };
   Map<String, dynamic> printData = {
     "Header": {
-      "ApplicationId": "8af7a3c2d6a34cc582cb3e42bc07b00a",
+      "ApplicationId": "78d73040662d412d9dfdc5b9ce532d19",
       "UserId": "user1234",
       "MethodId": "1002",
       "VersionNo": "1.0",
@@ -154,7 +154,7 @@ class TerminalProvider with ChangeNotifier {
   TextEditingController jsonController = TextEditingController(
     text: const JsonEncoder.withIndent('').convert({
       "Header": {
-        "ApplicationId": "8af7a3c2d6a34cc582cb3e42bc07b00a",
+        "ApplicationId": "78d73040662d412d9dfdc5b9ce532d19",
         "UserId": "user1234",
         "MethodId": "1002",
         "VersionNo": "1.0",
