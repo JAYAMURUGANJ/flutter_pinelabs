@@ -21,6 +21,7 @@ class PlutusSmart {
       final result = await _channel.invokeMethod('startTransaction', {
         'transactionData': transactionData,
       });
+      Logger.info('startTransaction result: $result'); // Log the result
       return result;
     } catch (e) {
       return e.toString();

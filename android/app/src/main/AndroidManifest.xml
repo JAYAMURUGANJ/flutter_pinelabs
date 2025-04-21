@@ -14,7 +14,7 @@
     </uses-permission>
 
     <application
-        android:label="ITMSKA ePay"
+        android:label="plutusapp_new"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

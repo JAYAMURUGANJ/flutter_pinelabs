@@ -1,4 +1,4 @@
-package com.nic.itmska_epay
+package com.pl.plutusapp_new
 
 import android.content.ComponentName
 import android.content.Context

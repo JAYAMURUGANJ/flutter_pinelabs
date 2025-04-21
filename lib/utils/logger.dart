@@ -1,10 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class Logger {
-
   static void info(var message) {
     _log(message, LogLevel.info);
   }
@@ -24,7 +22,7 @@ class Logger {
   static void _log(var message, LogLevel level) {
     // if (kReleaseMode) return; // Disable logging in release mode
 
-    var showMessage;
+    String showMessage;
     if (message is Map || message is List) {
       showMessage = jsonEncode(message); // Convert JSON structures to string
     } else {
@@ -38,7 +36,7 @@ class Logger {
   static String _getLogMessage(String message, LogLevel level) {
     final currentTime = _getFormattedDateTime();
     final colorCode = _getColorCode(level);
-    final methodName = _getMethodName();
+    // final methodName = _getMethodName();
 
     return '\x1B[${colorCode}m[$currentTime] [${level.toString().split('.').last.toUpperCase()}] ${message.toUpperCase()}\x1B[0m';
   }
@@ -54,7 +52,9 @@ class Logger {
       final stackTrace = StackTrace.current.toString().split('\n');
       if (stackTrace.length > 2) {
         final methodLine = stackTrace[4]; // Adjust index if needed
-        final regex = RegExp(r'#\d+\s+[^\s]+\.(\w+)\s'); // Extracts method name only
+        final regex = RegExp(
+          r'#\d+\s+[^\s]+\.(\w+)\s',
+        ); // Extracts method name only
         final match = regex.firstMatch(methodLine);
         if (match != null && match.groupCount > 0) {
           return match.group(1)?.toUpperCase() ?? 'UNKNOWN';
@@ -82,9 +82,4 @@ class Logger {
   }
 }
 
-enum LogLevel {
-  info,
-  success,
-  warning,
-  error,
-}
+enum LogLevel { info, success, warning, error }
